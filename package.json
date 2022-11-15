@@ -5,7 +5,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gi-ens/planby"
+    "url": "https://github.com/gi-ens/planby.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gi-ens/planby/issues"
   },
   "homepage": "https://planby.netlify.app",
   "funding": {
