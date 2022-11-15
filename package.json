@@ -1,11 +1,11 @@
 {
-  "name": "planby",
+  "name": "@giens/planby",
   "author": "Karol Kozer",
   "version": "1.1.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/karolkozer/planby"
+    "url": "https://github.com/gi-ens/planby"
   },
   "homepage": "https://planby.netlify.app",
   "funding": {
