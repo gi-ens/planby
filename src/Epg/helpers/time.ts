@@ -8,12 +8,7 @@ import { TIME_FORMAT } from "./variables";
 
 type DateTime = number | string | Date;
 
-const getTime = (dateTime: DateTime) => {
-  const date = new Date(dateTime);
-  const dateUtc = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()));
-  return dateUtc;
-}
-//const getTime = (date: DateTime) => new Date(date).getTime();
+const getTime = (date: DateTime) => new Date(date).getTime();
 
 export const getLiveStatus = (since: DateTime, till: DateTime) => {
   const nowTime = getTime(new Date());

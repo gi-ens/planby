@@ -1,6 +1,6 @@
 import React from "react";
 import { useDebouncedCallback } from "use-debounce";
-import { startOfToday, isToday as isTodayFns } from "date-fns";
+import { isToday as isTodayFns } from "date-fns";
 
 // Import types
 import { DateTime } from "../helpers/types";
@@ -12,6 +12,7 @@ import {
   getPositionX,
   useIsomorphicLayoutEffect,
 } from "../helpers";
+
 
 interface useLayoutProps {
   height?: number;
@@ -65,10 +66,11 @@ export function useLayout({
       const clientWidth = (width ??
         containerRef.current?.clientWidth) as number;
 
-      const newDate = new Date();
+      const date = new Date();
+      const dateUtc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
       const scrollPosition = getPositionX(
-        startOfToday(),
-        newDate,
+        startDate,
+        dateUtc,
         startDate,
         endDate,
         hourWidth

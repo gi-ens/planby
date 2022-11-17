@@ -1,5 +1,5 @@
 import React from "react";
-import { startOfDay } from "date-fns";
+//import { startOfDay } from "date-fns";
 
 // Import types
 import { DateTime } from "../../helpers/types";
@@ -25,10 +25,13 @@ export function useLine({
   hourWidth,
   sidebarWidth,
 }: useLineProps) {
+
+  const date = new Date();
+  const dateUtc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
   const initialState =
     getPositionX(
-      startOfDay(new Date(startDate)),
-      new Date(),
+      startDate,//startOfDay(new Date(startDate)),
+      dateUtc,//new Date(),
       startDate,
       endDate,
       hourWidth
@@ -47,10 +50,9 @@ export function useLine({
   }, isScrollX);
 
   React.useEffect(() => {
-    const date = new Date(startDate);
     const positionX = getPositionX(
-      startOfDay(date),
-      new Date(),
+      startDate,
+      dateUtc,
       startDate,
       endDate,
       hourWidth
